@@ -3,8 +3,10 @@ import datetime
 import asyncio
 import motor.motor_asyncio
 
-myclient = pymongo.MongoClient('mongodb://localhost:27017/')
-asynclient = motor.motor_asyncio.AsyncIOMotorClient('mongodb://localhost:27017/')
+connectionString = 'mongodb://localhost:27017/'
+
+myclient = pymongo.MongoClient(connectionString)
+asynclient = motor.motor_asyncio.AsyncIOMotorClient(connectionString)
 
 mydb = myclient['vn_stock_scrape']
 asyncdb = asynclient['vn_stock_scrape']
